@@ -1,0 +1,32 @@
+/* --- Epaint Custom Colors --- */
+.text-navy {
+  color: #0f172a !important; /* Royal Navy */
+}
+
+/* Override Bootstrap's default link colors for this nav */
+.nav-link {
+  color: #0f172a !important; /* Royal Navy base */
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #3b82f6 !important; /* Vibrant Blue on hover/active */
+}
+
+/* CTA Button Styling */
+.btn-warning {
+  background-color: #f59e0b !important; /* Paint Gold */
+  border-color: #f59e0b !important;
+  color: #ffffff !important; /* White text looks cleaner on this orange */
+}
+
+.btn-warning:hover {
+  background-color: #d97706 !important; /* Slightly darker gold on hover */
+  transform: translateY(-1px); /* Subtle lift effect */
+}
+
+/* Optional: Navbar Shadow & Spacing */
+.navbar {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}

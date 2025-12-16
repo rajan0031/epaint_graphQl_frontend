@@ -1,0 +1,55 @@
+/* Page Background */
+.bg-light-grey {
+    background-color: #f3f4f6;
+    /* Wall Grey */
+}
+
+/* Card Styling */
+.auth-card {
+    width: 100%;
+    max-width: 500px;
+    /* Limits width on desktop */
+    background-color: #ffffff;
+}
+
+/* Typography */
+.text-navy {
+    color: #0f172a;
+    /* Royal Navy */
+}
+
+/* Input Focus Glow */
+.form-control:focus,
+.form-select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Toggler Button Styles */
+.btn-primary {
+    background-color: #3b82f6 !important;
+    /* Vibrant Blue */
+    border-color: #3b82f6 !important;
+    color: white !important;
+}
+
+.transition-btn {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Simple Fade In Animation for switching forms */
+.fade-in {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

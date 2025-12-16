@@ -1,0 +1,103 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100 bg-light-grey">
+  
+  <div class="card shadow-lg border-0 rounded-4 auth-card">
+    <div class="card-body p-4 p-md-5">
+
+      <div class="text-center mb-4">
+        <h2 class="fw-bold text-navy">Welcome to Epaint</h2>
+        <p class="text-muted">The professional way to paint your home.</p>
+      </div>
+
+      <div class="d-flex justify-content-center mb-4">
+        <div class="btn-group bg-light rounded-pill p-1 w-100" role="group">
+          <button type="button" 
+                  class="btn rounded-pill fw-bold transition-btn"
+                  [class.btn-primary]="isLoginMode"
+                  [class.text-muted]="!isLoginMode"
+                  [class.bg-transparent]="!isLoginMode"
+                  (click)="toggleMode(true)">
+            Login
+          </button>
+          <button type="button" 
+                  class="btn rounded-pill fw-bold transition-btn"
+                  [class.btn-primary]="!isLoginMode"
+                  [class.text-muted]="isLoginMode"
+                  [class.bg-transparent]="isLoginMode"
+                  (click)="toggleMode(false)">
+            Signup
+          </button>
+        </div>
+      </div>
+
+      <form *ngIf="isLoginMode" [formGroup]="loginForm" (ngSubmit)="onLogin()" class="fade-in">
+        
+        <div class="mb-3">
+          <label class="form-label fw-semibold text-navy">Email Address</label>
+          <input type="email" class="form-control" formControlName="email" placeholder="name@example.com">
+          <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="text-danger small mt-1">
+            Valid email is required.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold text-navy">Password</label>
+          <input type="password" class="form-control" formControlName="password" placeholder="••••••••">
+          <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger small mt-1">
+            Password is required.
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-end mb-4">
+          <a href="#" class="text-primary text-decoration-none small">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 fw-bold py-2">
+          Login Now
+        </button>
+      </form>
+
+
+      <form *ngIf="!isLoginMode" [formGroup]="signupForm" (ngSubmit)="onSignup()" class="fade-in">
+        
+        <div class="row g-2">
+          <div class="col-12 mb-2">
+            <label class="form-label fw-semibold text-navy">Full Name</label>
+            <input type="text" class="form-control" formControlName="name" placeholder="John Doe">
+          </div>
+
+          <div class="col-md-6 mb-2">
+            <label class="form-label fw-semibold text-navy">Username</label>
+            <input type="text" class="form-control" formControlName="userName" placeholder="johnny_p">
+          </div>
+
+          <div class="col-md-6 mb-2">
+            <label class="form-label fw-semibold text-navy">Phone</label>
+            <input type="tel" class="form-control" formControlName="phoneNumber" placeholder="9876543210">
+          </div>
+
+          <div class="col-12 mb-2">
+            <label class="form-label fw-semibold text-navy">Email</label>
+            <input type="email" class="form-control" formControlName="email" placeholder="name@example.com">
+          </div>
+
+          <div class="col-12 mb-2">
+            <label class="form-label fw-semibold text-navy">I am a...</label>
+            <select class="form-select" formControlName="role">
+              <option *ngFor="let role of roles" [value]="role.id">{{ role.name }}</option>
+            </select>
+          </div>
+
+          <div class="col-12 mb-4">
+            <label class="form-label fw-semibold text-navy">Password</label>
+            <input type="password" class="form-control" formControlName="password" placeholder="••••••••">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 fw-bold py-2">
+          Create Account
+        </button>
+      </form>
+
+    </div>
+  </div>
+</div>

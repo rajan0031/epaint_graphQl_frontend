@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold text-navy fs-3" href="#">Epaint</a>
+
+        <button class="navbar-toggler border-0" type="button" (click)="isCollapsed = !isCollapsed"
+            aria-controls="navbarNav" aria-expanded="!isCollapsed" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div [ngbCollapse]="isCollapsed" class="navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item"><a class="nav-link active fw-semibold" href="#">Home</a></li>
+                <li class="nav-item">
+                    <a routerLink="/auth" routerLinkActive="active" class="nav-link fw-medium">Signup</a>
+                </li>
+
+                <li class="nav-item"><a class="nav-link fw-medium" href="#">Services</a></li>
+                <li class="nav-item"><a class="nav-link fw-medium" href="#">Service Areas</a></li>
+                <li class="nav-item"><a class="nav-link fw-medium" href="#">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link fw-medium" href="#">Price List</a></li>
+                <li class="nav-item"><a class="nav-link fw-medium" href="#">Paints</a></li>
+                <li class="nav-item"><a class="nav-link fw-medium" href="#">Blogs</a></li>
+                <li class="nav-item"><a class="nav-link fw-medium" href="#">Contact Us</a></li>
+
+                <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                    <a class="btn btn-warning text-white fw-bold px-4 rounded-pill shadow-sm" href="#">
+                        Book Painter
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

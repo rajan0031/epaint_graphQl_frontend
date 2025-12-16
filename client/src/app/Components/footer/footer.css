@@ -1,0 +1,68 @@
+/* --- Footer Customization for Epaint --- */
+
+/* Royal Navy Background */
+.footer-custom {
+    background-color: #0f172a;
+    /* Deep Navy */
+    color: #e2e8f0;
+    /* Soft white text */
+    font-size: 0.95rem;
+}
+
+/* Headings */
+.footer-custom h5 {
+    letter-spacing: 0.5px;
+}
+
+/* Links (Gray by default, Gold on Hover) */
+.footer-link {
+    color: #94a3b8 !important;
+    /* Cool Gray */
+    transition: all 0.3s ease;
+    font-weight: 400;
+}
+
+.footer-link:hover {
+    color: #f59e0b !important;
+    /* Paint Gold */
+    padding-left: 5px;
+    /* Subtle movement effect */
+}
+
+/* Social Icons */
+.footer-social:hover {
+    opacity: 1 !important;
+    color: #f59e0b !important;
+    /* Gold on hover */
+}
+
+/* Subscribe Input */
+.footer-custom input.form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Semi-transparent */
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-custom input.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #f59e0b;
+    /* Gold border on focus */
+    box-shadow: none;
+}
+
+/* Placeholder color fix */
+.footer-custom input::placeholder {
+    color: #94a3b8;
+}
+
+/* Subscribe Button */
+.btn-warning {
+    background-color: #f59e0b;
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: #d97706;
+    /* Darker Gold */
+}
