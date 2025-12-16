@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Corosal } from '../../ui/corosal/corosal';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule],
+  imports: [CommonModule, Corosal],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
@@ -13,7 +14,7 @@ export class Home {
   services = [
     {
       title: 'Interior Painting 🛋️',
-      icon: 'house-door-fill', 
+      icon: 'house-door-fill',
       description: 'From a single accent wall to whole-house makeovers! Cozy, fresh, and perfect color palettes.',
       cta: 'View Interior Gallery'
     },

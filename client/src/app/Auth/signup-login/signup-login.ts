@@ -2,9 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthServices } from '../../Services/auth-services';
-
-
-
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { SnackBarService } from '../../Services/snack-bar-service';
 
 @Component({
   selector: 'app-signup-login',
@@ -23,7 +22,7 @@ export class SignupLogin {
     { id: 1, name: 'Customer' }
   ];
 
-  constructor(private fb: FormBuilder, private authService: AuthServices) {
+  constructor(private fb: FormBuilder, private authService: AuthServices, private matSnackBar: MatSnackBar, private snackBarService: SnackBarService) {
 
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -53,6 +52,8 @@ export class SignupLogin {
 
       this.authService.loginUser(this.loginForm.value)
 
+      this.snackBarService.handleSnackBar('Login successfull','success',3000)
+
     } else {
       this.loginForm.markAllAsTouched();
     }
@@ -69,7 +70,7 @@ export class SignupLogin {
       };
 
       this.authService.registerUser(signupPayload);
-
+      // this.snackBarService.handleSnackBar('Signup ! successfull')
       console.log('Signup Payload (C# Model Ready):', signupPayload);
 
     } else {

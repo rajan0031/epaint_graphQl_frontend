@@ -1,0 +1,125 @@
+/* --- Global Spacing & Colors --- */
+:host {
+  display: block;
+  overflow-x: hidden;
+}
+
+.bg-navy { background-color: #0f172a; }
+.text-navy { color: #0f172a; }
+.bg-light-grey { background-color: #f8fafc; }
+.bg-primary-soft { background-color: rgba(59, 130, 246, 0.1); }
+.text-primary { color: #3b82f6 !important; }
+.bg-primary-gradient {
+  background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
+}
+
+/* Section Spacing - Breathable layouts */
+.section-spacing {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* --- Hero & Carousel Wrapper (CRITICAL) --- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  /* Ensures carousel doesn't collapse */
+  min-height: 50vh; 
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  height: 600px; /* Desktop Height */
+  overflow: hidden;
+}
+
+/* Force app-corosal images to fill this space */
+::ng-deep app-corosal .carousel-item img {
+  height: 600px;
+  object-fit: cover; /* Crops sides to fill height */
+  width: 100%;
+}
+
+/* Dark Overlay text on top of carousel */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.4); /* Darkens image by 40% */
+  z-index: 10;
+  pointer-events: none; /* Allows clicking through to carousel arrows if needed */
+}
+.hero-overlay .container {
+  pointer-events: auto;
+}
+
+/* Text Shadow for readability on images */
+.text-shadow { text-shadow: 2px 2px 8px rgba(0,0,0,0.6); }
+.text-shadow-sm { text-shadow: 1px 1px 4px rgba(0,0,0,0.5); }
+
+/* --- Feature Cards --- */
+.feature-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.hover-lift:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 1rem 3rem rgba(0,0,0,0.1) !important;
+}
+
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Divider --- */
+.divider {
+  width: 60px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+/* --- Animations --- */
+.fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hover-scale {
+  transition: transform 0.2s;
+}
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  /* Mobile Carousel Height */
+  .carousel-wrapper {
+    height: 400px;
+  }
+  
+  ::ng-deep app-corosal .carousel-item img {
+    height: 400px;
+  }
+
+  .section-spacing {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .display-3 { font-size: 2.5rem; } /* Smaller Hero Text */
+}

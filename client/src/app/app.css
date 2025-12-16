@@ -1,0 +1,20 @@
+.success-snackbar {
+    background-color: #4caf50 !important;
+    /* Material green */
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.error-snackbar {
+    background-color: #f44336 !important;
+    /* Red */
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.warning-snackbar {
+    background-color: #ff9800 !important;
+    /* Orange */
+    color: #fff !important;
+    font-weight: 600;
+}
